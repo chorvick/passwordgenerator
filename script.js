@@ -74,6 +74,8 @@ pw();
 
 alert("answer is" + answer);
 
+document.getElementById(answer);
+
 
 
 ///Write password to the #password input
