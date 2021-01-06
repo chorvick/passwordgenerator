@@ -4,7 +4,10 @@ var upC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var loC = upC.toLowerCase();
 var num = "1234567890";
 var spC = "<>,.)(*&^%$#@!`[]{};':";  //23 total
-var password = ""; // make sure password field is empty
+var elementsof = ""; // make sure this starts empty also -we will fill with user choices so function will run correctly
+var length = 0;
+var answer = "";
+
 
 var length = prompt("Please enter a number between 8 and 128 for the length of your password.")
 
@@ -14,11 +17,60 @@ if (length < 8 || length > 128) {
     var length = prompt("SORRY - Please try again with a number between 8 and 128");
 }
 
-var selectlow = prompt("Do you want to use lower case letters in your password ?");
+var selecthi = confirm("Should your password contain upper case letters ?");
+
+var selectlow = confirm("Should your password contain lower case letters ?");
+
+var selectnum = confirm("Should your password contain numbers ?");
+
+var selectsym = confirm("Should your password contain symbold and special charachters ?");
 
 
 
-// Write password to the #password input
+
+
+///sanity checks
+
+
+
+
+
+////
+
+
+/// make function to generate password based on the users selections
+
+function pw() {
+
+    if (selecthi) {
+        elementsof += upC;
+    }
+    if (selectlow) {
+        elementsof += loC;
+    }
+    if (selectnum) {
+        elementsof += num;
+    }
+    if (selectsym) {
+        elementsof += spC;
+    }
+
+    for (i = 0; i < length; i++) {
+        answer += elementsof.charAt(Math.floor(Math.random() * elementsof.length));
+    }
+    return answer;
+}
+
+///call function and test -- sanity check only for now
+
+pw();
+
+
+alert("answer is" + answer);
+
+
+
+///Write password to the #password input
 function writePassword() {
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
@@ -29,3 +81,6 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+//
+
