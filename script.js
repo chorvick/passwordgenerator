@@ -11,12 +11,17 @@ var answer = "";/// make sure everything starts empty
 
 var length = prompt("Please enter a number between 8 and 128 for the length of your password.")
 
-///below we test for a number between 8 and 128
-///need better check for valid data this only works once 
+///below we test for a number between 8 and 128 while loop works unless user inputs strings
+///improved check of user input but not perfect 
 
 while (length < 8 || length > 128) {
     var length = prompt("SORRY - Please try again with a number between 8 and 128");
 }
+
+while (isNaN(length)) {
+    var length = prompt("SORRY - Please try again with a number between 8 and 128");
+}
+
 
 var selecthi = confirm("Should your password contain upper case letters ?");
 
