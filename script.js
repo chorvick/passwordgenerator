@@ -6,12 +6,13 @@ var num = "1234567890";
 var spC = "<>,.)(*&^%$#@!`[]{};':";  //23 total
 var elementsof = ""; // make sure this starts empty also -we will fill with user choices so function will run correctly
 var length = 0;
-var answer = "";
+var answer = "";/// make sure everything starts empty
 
 
 var length = prompt("Please enter a number between 8 and 128 for the length of your password.")
 
 ///below we test for a number between 8 and 128
+///need better check for valid data this only works once 
 
 if (length < 8 || length > 128) {
     var length = prompt("SORRY - Please try again with a number between 8 and 128");
