@@ -69,20 +69,21 @@ function pw() {
 
 ///call function and test -- sanity check only for now
 
-pw();
+//pw();
 
 
-alert("answer is" + answer);
+//alert("answer is" + answer);
 
-document.getElementById(answer);
+///document.getElementById("password").innerHTML = "answer";
 
 
 
-///Write password to the #password input
+//Write password to the #password input
 function writePassword() {
-    var password = generatePassword();
+    // var password = generatePassword();
+    var password = pw();
     var passwordText = document.querySelector("#password");
-
+    passwordText.value = "";
     passwordText.value = password;
 
 }
