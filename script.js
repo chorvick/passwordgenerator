@@ -55,6 +55,27 @@ function pw() {
 
     var selectsym = confirm("Should your password contain symbold and special charachters ?");
 
+    /// adding test to make sure the user selected at least one of the four options , if all 
+    /// four evaluate false it notifies them and asks them to try again
+
+    // if ((selecthi) && (selectlow) && (selectnum) && (selectsym) == "false") {
+    //     alert("Sorry you have to pick at least one of the four conditions ! Please try again.");
+
+    //     var selecthi = confirm("Should your password contain upper case letters ?");
+
+    //     var selectlow = confirm("Should your password contain lower case letters ?");
+
+    //     var selectnum = confirm("Should your password contain numbers ?");
+
+    //     var selectsym = confirm("Should your password contain symbold and special charachters ?");
+    // }
+
+
+
+
+
+
+
     if (selecthi) {
         elementsof += upC;
     }
