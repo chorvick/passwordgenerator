@@ -27,7 +27,8 @@ function pw() {
     var length = prompt("Please enter a number between 8 and 128 for the length of your password.")
 
     ///below we test for a number between 8 and 128 while loop works unless user inputs strings
-    ///improved check of user input but not perfect 
+    ///improved check of user input , or statement to make sure between 8 and 128
+    /// used isNaN to prevent string entry - also a test for zero or null added and working 
 
     while (length < 8 || length > 128) {
         var length = prompt("SORRY - Please try again with a number between 8 and 128");
@@ -42,6 +43,8 @@ function pw() {
     }
 
 
+    //here the user can select if they want upper and/or lower case , numbers and special charachters in their password
+    //// this next part of the function uses if statements to make sure the password is made as requested
 
 
     var selecthi = confirm("Should your password contain upper case letters ?");
@@ -64,7 +67,7 @@ function pw() {
     if (selectsym) {
         elementsof += spC;
     }
-
+    ////  the for loop uses Math.random to put the password the user requested into 'answer'
     for (i = 0; i < length; i++) {
         answer += elementsof.charAt(Math.floor(Math.random() * elementsof.length));
     }
