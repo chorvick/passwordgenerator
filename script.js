@@ -68,16 +68,28 @@ function pw() {
 
 //Write password to the #password input
 function writePassword() {
-    // var password = generatePassword();
+
     var password = pw();
     var passwordText = document.querySelector("#password");
 
     passwordText.value = password;
-
+    
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+// Add event listener to generate button-------event listener broke program
+//adding test to not generate multiple passwords if button is pressed again and again
+
+
+
+
+generateBtn.addEventListener("click", writePassword); {
+
+    // we only want it to do this once
+
+///   }, { once: true };                this also broke the program
+
+
+
 
 //
 
