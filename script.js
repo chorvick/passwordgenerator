@@ -73,7 +73,7 @@ function writePassword() {
     var passwordText = document.querySelector("#password");
 
     passwordText.value = password;
-    
+
 }
 
 // Add event listener to generate button-------event listener broke program
@@ -82,14 +82,7 @@ function writePassword() {
 
 
 
-generateBtn.addEventListener("click", writePassword); {
-
-    // we only want it to do this once
-
-///   }, { once: true };                this also broke the program
+generateBtn.addEventListener("click", writePassword);
 
 
-
-
-//
 
