@@ -22,6 +22,12 @@ while (isNaN(length)) {
     var length = prompt("SORRY - Please try again with a number between 8 and 128");
 }
 
+while (length == 0 || length == null) {
+    var length = prompt("SORRY - Please try again with a number between 8 and 128");
+}
+
+
+
 
 var selecthi = confirm("Should your password contain upper case letters ?");
 
@@ -30,17 +36,6 @@ var selectlow = confirm("Should your password contain lower case letters ?");
 var selectnum = confirm("Should your password contain numbers ?");
 
 var selectsym = confirm("Should your password contain symbold and special charachters ?");
-
-
-
-
-
-///sanity checks
-
-
-
-
-
 ////
 
 
@@ -67,14 +62,7 @@ function pw() {
     return answer;
 }
 
-///call function and test -- sanity check only for now
 
-//pw();
-
-
-//alert("answer is" + answer);
-
-///document.getElementById("password").innerHTML = "answer";
 
 
 
@@ -83,7 +71,7 @@ function writePassword() {
     // var password = generatePassword();
     var password = pw();
     var passwordText = document.querySelector("#password");
-    passwordText.value = "";
+
     passwordText.value = password;
 
 }
