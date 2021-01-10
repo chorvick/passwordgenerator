@@ -24,6 +24,7 @@ function confirm_inputs(inputs, condition) {
 
 function pw() {
     var answer = "";  //set to a blank here to clear the form from previous passwords generated
+    var elementsof = "";//need to clear again here if we pass multiple times 
     var length = prompt("Please enter a number between 8 and 128 for the length of your password.")
 
     ///below we test for a number between 8 and 128 while loop works unless user inputs strings
