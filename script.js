@@ -9,7 +9,6 @@ var length = 0;
 var answer = "";/// make sure everything starts empty
 
 
-
 /// make function to generate password based on the users selections  by putting the qualifying questions inside 
 ///function now the prompts no longer show up as soon as you load the page,  
 /// for this assignment the pmompts and questions to user how they want their password
@@ -24,7 +23,7 @@ function confirm_inputs(inputs, condition) {
 ///define our function pw which first asks questions then makes the password to user specifications
 
 function pw() {
-
+    var answer = "";  //set to a blank here to clear the form from previous passwords generated
     var length = prompt("Please enter a number between 8 and 128 for the length of your password.")
 
     ///below we test for a number between 8 and 128 while loop works unless user inputs strings
@@ -77,7 +76,8 @@ function pw() {
         if (selectsym) {
             elementsof += spC;
         }
-        ////  the for loop uses Math.random to put the password the user requested into 'answer'
+        ////  the for loop uses Math.random and Math.floor 
+        ///   ro round down and  to put the password the user requested into 'answer'
         for (i = 0; i < length; i++) {
             answer += elementsof.charAt(Math.floor(Math.random() * elementsof.length));
         }
@@ -88,7 +88,7 @@ function pw() {
 
 //Write password to the #password input
 function writePassword(event) {
-    console.log(event)
+
 
     var password = pw();
     var passwordText = document.querySelector("#password");
