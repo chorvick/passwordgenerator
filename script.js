@@ -24,7 +24,8 @@ function confirm_inputs(inputs, condition) {
 
 function pw() {
     var answer = "";  //set to a blank here to clear the form from previous passwords generated
-    var elementsof = "";//need to clear again here if we pass multiple times 
+    var elementsof = "";//need to clear again here if we pass multiple times fixes bug that
+    /// was keeping users previous choices when used multiple times 
     var length = prompt("Please enter a number between 8 and 128 for the length of your password.")
 
     ///below we test for a number between 8 and 128 while loop works unless user inputs strings
@@ -57,7 +58,9 @@ function pw() {
     var selectsym = confirm("Should your password contain symbold and special charachters ?");
     //
     // we test here to make sure the user selected at least one of the four conditions /parameters
-    //as long as they selected at least one choice a password will be produced
+    //as long as they selected at least one choice a password will be produced -- if they do not
+    //select at least one of the four conditions we ask them to please try again and to select
+    // at least one of the four conditions -- 
 
 
     let conditions = confirm_inputs({ selecthi, selectlow, selectnum, selectsym }, true)
@@ -78,7 +81,7 @@ function pw() {
             elementsof += spC;
         }
         ////  the for loop uses Math.random and Math.floor 
-        ///   ro round down and  to put the password the user requested into 'answer'
+        ///   to round down and  to put the password the user requested into 'answer'
         for (i = 0; i < length; i++) {
             answer += elementsof.charAt(Math.floor(Math.random() * elementsof.length));
         }
@@ -87,7 +90,7 @@ function pw() {
 
 }
 
-//Write password to the #password input
+//Write password to the #password input to user specifications
 function writePassword(event) {
 
 
@@ -98,8 +101,7 @@ function writePassword(event) {
 
 }
 
-//
-//
+
 
 generateBtn.addEventListener("click", writePassword);
 
